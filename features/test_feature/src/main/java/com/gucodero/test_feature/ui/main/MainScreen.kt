@@ -1,4 +1,4 @@
-package com.gucodero.architectureandroid.test.main
+package com.gucodero.test_feature.ui.main
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -9,11 +9,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gucodero.architectureandroid.test.TestBottomSheetDialog
 import com.gucodero.architectureandroid.test.TestDialog
+import com.gucodero.test_feature.di.injectFeatures
 import com.gucodero.ui.base.ScreenFragment
 
 class MainScreen: ScreenFragment<MainViewModel>(
     clazz = MainViewModel::class
 ) {
+
+    override fun onInit() {
+        injectFeatures()
+    }
 
     @Composable
     override fun Screen() {

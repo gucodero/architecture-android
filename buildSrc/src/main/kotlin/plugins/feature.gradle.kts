@@ -15,7 +15,6 @@ android {
     defaultConfig {
         minSdk = Config.minSdk
     }
-    dataBinding.isEnabled = true
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.compose
     }
@@ -29,6 +28,5 @@ addFeatureDependencies()
 
 dependencies {
     implementation(project(path = ":ui"))
-    implementation(project(":core"))
     api(project(path = ":data"))
 }

@@ -5,7 +5,7 @@ import utils.addFeatureDependencies
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("plugins.common")
 }
 
 @Suppress("UnstableApiUsage")
@@ -15,7 +15,6 @@ android {
         minSdk = Config.minSdk
         targetSdk = Config.maxSdk
     }
-    dataBinding.isEnabled = true
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.compose
     }

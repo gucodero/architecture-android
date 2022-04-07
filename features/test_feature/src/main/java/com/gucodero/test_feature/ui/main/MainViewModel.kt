@@ -1,4 +1,4 @@
-package com.gucodero.architectureandroid.test.main
+package com.gucodero.test_feature.ui.main
 
 import androidx.lifecycle.ViewModel
 
