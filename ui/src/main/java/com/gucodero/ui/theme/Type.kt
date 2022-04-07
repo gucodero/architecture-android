@@ -1,4 +1,4 @@
-package com.gucodero.architectureandroid.ui.theme
+package com.gucodero.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

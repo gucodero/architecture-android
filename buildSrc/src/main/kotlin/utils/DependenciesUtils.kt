@@ -48,6 +48,12 @@ fun Project.addFeatureDependencies(){
     addComposeDependencies()
     addTestDependencies()
     addAndroidTestDependencies()
+    addKotlinCoroutinesDependencies()
+    addKoinDependencies()
+    addRetrofitDependencies()
+    addTimberDependencies()
+    addNavigationFragmentDependencies()
+    addLottieDependencies()
 }
 
 fun Project.addAndroidDependencies() {
@@ -80,5 +86,51 @@ fun Project.addAndroidTestDependencies(){
     )
     debugImplementation(
         Dependencies.composeUiTooling
+    )
+}
+
+fun Project.addKotlinCoroutinesDependencies(){
+    implementation(
+        Dependencies.kotlinCoroutinesCore,
+        Dependencies.kotlinCoroutinesAndroid
+    )
+}
+
+
+fun Project.addKoinDependencies(){
+    implementation(
+        Dependencies.koinCore,
+        Dependencies.koinAndroid
+    )
+}
+
+fun Project.addRetrofitDependencies(){
+    implementation(
+        Dependencies.retrofit,
+        Dependencies.retrofitLog,
+        Dependencies.converterGson,
+        Dependencies.okhttp,
+        Dependencies.okhttpLogging
+    )
+}
+
+fun Project.addTimberDependencies(){
+    implementation(
+        Dependencies.timber
+    )
+}
+
+fun Project.addNavigationFragmentDependencies(){
+    implementation(
+        Dependencies.navigationFragment,
+        Dependencies.navigationUI,
+        Dependencies.navigationDynamicFeature
+    )
+}
+
+fun Project.addLottieDependencies(){
+    implementation(
+        Dependencies.lottie,
+        Dependencies.lottieCompose
     )
 }

@@ -8,4 +8,13 @@ object Versions {
     const val jUnit = "4.13.2"
     const val androidJUnit = "1.1.3"
     const val espresso = "3.4.0"
+    const val kotlinCoroutines = "1.5.2"
+    const val koin = "3.1.2"
+    const val retrofit = "2.9.0"
+    const val retrofitLog = "4.9.3"
+    const val okhttp = "4.9.3"
+    const val timber = "4.7.1"
+    const val navigationFragment = "2.4.1"
+    const val lottie = "4.2.2"
+    const val lottieCompose = "5.0.0"
 }

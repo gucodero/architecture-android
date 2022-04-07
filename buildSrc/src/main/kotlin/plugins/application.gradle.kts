@@ -1,5 +1,6 @@
 package plugins
 
+import gradle.kotlin.dsl.accessors._ebd9a44e97e230845a4c1d2edcc3667f.api
 import utils.addFeatureDependencies
 
 plugins {
@@ -7,47 +8,26 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+@Suppress("UnstableApiUsage")
 android {
     compileSdk = Config.maxSdk
-
     defaultConfig {
-        applicationId = Config.applicationId
         minSdk = Config.minSdk
         targetSdk = Config.maxSdk
-        versionCode = Config.versionCode
-        versionName = Config.versionName
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = Config.javaVersion
-        targetCompatibility = Config.javaVersion
-    }
-    kotlinOptions {
-        jvmTarget = Config.javaVersion.toString()
-    }
-    buildFeatures {
-        compose = true
-    }
+    dataBinding.isEnabled = true
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.compose
     }
-    packagingOptions {
-        resources {
-            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
-        }
+    buildFeatures {
+        compose = true
+        buildConfig = true
     }
 }
 
 addFeatureDependencies()
+
+dependencies {
+    implementation(project(":ui"))
+    api(project(path = ":data"))
+}

@@ -15,3 +15,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Architecture Android"
 include(":app")
+include(":ui")
+include(":data")
+include(":domain")
