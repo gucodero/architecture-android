@@ -1,8 +1,6 @@
 package com.gucodero.test_feature.ui.main
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -11,6 +9,8 @@ import com.gucodero.architectureandroid.test.TestBottomSheetDialog
 import com.gucodero.architectureandroid.test.TestDialog
 import com.gucodero.test_feature.di.injectFeatures
 import com.gucodero.ui.base.ScreenFragment
+import com.gucodero.ui.components.AppButton
+import com.gucodero.ui.utils.navigate
 
 class MainScreen: ScreenFragment<MainViewModel>(
     clazz = MainViewModel::class
@@ -21,31 +21,46 @@ class MainScreen: ScreenFragment<MainViewModel>(
     }
 
     @Composable
-    override fun Screen() {
+    override fun Screen() = with(viewModel) {
+        OnEvent {
+            when(it){
+                is MainUiEvent.GoToCounterScreen -> {
+                    navigate(MainScreenDirections.mainScreenToCounterScreenAction())
+                }
+            }
+        }
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxSize()
         ) {
-            Button(
+            AppButton(
+                text = "Test Dialog",
                 onClick = {
                     TestDialog().show()
                 }
-            ) {
-                   Text(
-                       text = "Test Dialog"
-                   )
-            }
+            )
             Spacer(modifier = Modifier.height(12.dp))
-            Button(
+            AppButton(
+                text = "Test Bottom Sheet Dialog",
                 onClick = {
                     TestBottomSheetDialog().show()
                 }
-            ) {
-                Text(
-                    text = "Test Bottom Sheet Dialog"
-                )
-            }
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+            AppButton(
+                text = "Loading",
+                onClick = {
+                    loading(true, 2000)
+                }
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+            AppButton(
+                text = "Go to counter",
+                onClick = {
+                    goToCounter()
+                }
+            )
         }
     }
 }

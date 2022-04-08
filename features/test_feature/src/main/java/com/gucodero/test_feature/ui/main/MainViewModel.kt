@@ -1,5 +1,16 @@
 package com.gucodero.test_feature.ui.main
 
-import androidx.lifecycle.ViewModel
+import com.gucodero.ui.lifecycle.StatelessViewModel
+import com.gucodero.ui.utils.launch
+import kotlinx.coroutines.delay
 
-class MainViewModel: ViewModel()
+class MainViewModel: StatelessViewModel<MainUiEvent>() {
+
+    fun goToCounter() = launch {
+        loading = true
+        delay(2000)
+        event = MainUiEvent.GoToCounterScreen
+        loading = false
+    }
+
+}

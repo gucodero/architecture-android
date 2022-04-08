@@ -6,6 +6,12 @@
     app:moduleName="test_feature">
 
     <fragment android:name="com.gucodero.test_feature.ui.main.MainScreen"
-        android:id="@+id/main_screen" />
+        android:id="@+id/main_screen">
+        <action android:id="@+id/main_screen_to_counter_screen_action"
+            app:destination="@id/counter_screen"/>
+    </fragment>
+
+    <fragment android:name="com.gucodero.test_feature.ui.counter.CounterScreen"
+        android:id="@+id/counter_screen" />
 
 </navigation>
