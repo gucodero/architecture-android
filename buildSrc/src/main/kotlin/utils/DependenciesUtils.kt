@@ -43,6 +43,20 @@ private fun Project.debugImplementation(vararg dependencyName: String){
     )
 }
 
+private fun Project.annotationProcessor(vararg dependencyName: String){
+    addDependencies(
+        configurationName = "annotationProcessor",
+        dependencyName = dependencyName
+    )
+}
+
+private fun Project.kapt(vararg dependencyName: String){
+    addDependencies(
+        configurationName = "kapt",
+        dependencyName = dependencyName
+    )
+}
+
 fun Project.addFeatureDependencies(){
     addAndroidDependencies()
     addComposeDependencies()
@@ -54,7 +68,8 @@ fun Project.addFeatureDependencies(){
     addTimberDependencies()
     addNavigationFragmentDependencies()
     addLottieDependencies()
-    addDataStorage()
+    addDataStorageDependencies()
+    addRoomDependencies()
 }
 
 fun Project.addAndroidDependencies() {
@@ -69,7 +84,8 @@ fun Project.addComposeDependencies() {
     implementation(
         Dependencies.compose,
         Dependencies.composeMaterial,
-        Dependencies.composePreview
+        Dependencies.composePreview,
+        Dependencies.pagerCompose
     )
 }
 
@@ -136,9 +152,18 @@ fun Project.addLottieDependencies(){
     )
 }
 
-fun Project.addDataStorage(){
+fun Project.addDataStorageDependencies(){
     implementation(
         Dependencies.dataStore,
         Dependencies.dataStorePreferences
     )
+}
+
+fun Project.addRoomDependencies(){
+    implementation(
+        Dependencies.roomRuntime,
+        Dependencies.roomKtx
+    )
+    annotationProcessor(Dependencies.roomCompiler)
+    kapt(Dependencies.roomCompiler)
 }

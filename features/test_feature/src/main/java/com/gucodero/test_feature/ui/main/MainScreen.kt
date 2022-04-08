@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gucodero.architectureandroid.test.TestBottomSheetDialog
 import com.gucodero.architectureandroid.test.TestDialog
-import com.gucodero.test_feature.di.injectFeatures
+import com.gucodero.test_feature.module.injectFeatures
 import com.gucodero.ui.base.ScreenFragment
 import com.gucodero.ui.components.AppButton
 import com.gucodero.ui.utils.navigate

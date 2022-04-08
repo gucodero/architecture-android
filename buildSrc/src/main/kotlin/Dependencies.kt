@@ -27,4 +27,8 @@ object Dependencies {
     const val lottieCompose = "com.airbnb.android:lottie-compose:${Versions.lottieCompose}"
     const val dataStore = "androidx.datastore:datastore:${Versions.dataStore}"
     const val dataStorePreferences = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
+    const val pagerCompose = "com.google.accompanist:accompanist-pager:${Versions.pagerCompose}"
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
 }

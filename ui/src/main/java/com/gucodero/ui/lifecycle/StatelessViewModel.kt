@@ -6,9 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gucodero.ui.utils.launch
 import kotlinx.coroutines.*
-import com.gucodero.ui.lifecycle.model.UiEvent as IEvent
 
-abstract class StatelessViewModel<Event: IEvent>(
+abstract class StatelessViewModel<Event>(
     event: Event? = null
 ): ViewModel(), LoadingEvent {
 

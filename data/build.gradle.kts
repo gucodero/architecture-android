@@ -9,7 +9,8 @@ addTestDependencies()
 addKoinDependencies()
 addRetrofitDependencies()
 addTimberDependencies()
-addDataStorage()
+addDataStorageDependencies()
+addRoomDependencies()
 
 dependencies {
     api(project(":domain"))

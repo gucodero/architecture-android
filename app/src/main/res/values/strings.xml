@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Architecture Android</string>
     <string name="title_test_feature">Test Feature</string>
+    <string name="title_auth">Auth</string>
 </resources>

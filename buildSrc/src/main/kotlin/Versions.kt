@@ -18,4 +18,6 @@ object Versions {
     const val lottie = "4.2.2"
     const val lottieCompose = "5.0.0"
     const val dataStore = "1.0.0"
+    const val pagerCompose = "0.24.5-alpha"
+    const val room = "2.4.2"
 }

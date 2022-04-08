@@ -2,7 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_graph"
-    app:startDestination="@id/test_feature_graph">
+    app:startDestination="@id/auth_graph">
+
+    <include-dynamic
+        android:id="@+id/auth_graph"
+        android:label="Test Feature"
+        app:graphPackage="${applicationId}.auth"
+        app:graphResName="auth_graph"
+        app:moduleName="auth" />
 
     <include-dynamic
         android:id="@+id/test_feature_graph"
