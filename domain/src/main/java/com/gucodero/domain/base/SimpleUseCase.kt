@@ -18,7 +18,7 @@ interface SimpleUseCase {
     }
 
     interface OnlyResult<Result: IResult>: SimpleUseCase {
-        suspend operator fun invoke(params: Result)
+        suspend operator fun invoke(): Result
     }
 
     interface Empty: SimpleUseCase {

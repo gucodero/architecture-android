@@ -17,4 +17,5 @@ object Versions {
     const val navigationFragment = "2.4.1"
     const val lottie = "4.2.2"
     const val lottieCompose = "5.0.0"
+    const val dataStore = "1.0.0"
 }

@@ -25,4 +25,6 @@ object Dependencies {
     const val navigationDynamicFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigationFragment}"
     const val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
     const val lottieCompose = "com.airbnb.android:lottie-compose:${Versions.lottieCompose}"
+    const val dataStore = "androidx.datastore:datastore:${Versions.dataStore}"
+    const val dataStorePreferences = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
 }

@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 internal val uiModule = module {
     viewModel { MainViewModel() }
-    viewModel { CounterViewModel() }
+    viewModel { CounterViewModel(get(), get()) }
 }
 
 internal val domainModule = module {

@@ -54,6 +54,7 @@ fun Project.addFeatureDependencies(){
     addTimberDependencies()
     addNavigationFragmentDependencies()
     addLottieDependencies()
+    addDataStorage()
 }
 
 fun Project.addAndroidDependencies() {
@@ -132,5 +133,12 @@ fun Project.addLottieDependencies(){
     implementation(
         Dependencies.lottie,
         Dependencies.lottieCompose
+    )
+}
+
+fun Project.addDataStorage(){
+    implementation(
+        Dependencies.dataStore,
+        Dependencies.dataStorePreferences
     )
 }
