@@ -19,4 +19,8 @@ class LoginViewModel: StatefulViewModel<LoginUiState, LoginUiEvent>(
         )
     }
 
+    fun login(){
+        event = LoginUiEvent.GoToMain
+    }
+
 }

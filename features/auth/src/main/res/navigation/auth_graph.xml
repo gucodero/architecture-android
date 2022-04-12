@@ -5,6 +5,9 @@
     app:startDestination="@id/login_screen">
 
     <fragment android:name="com.gucodero.auth.ui.login.LoginScreen"
-        android:id="@+id/login_screen"/>
+        android:id="@+id/login_screen">
+        <action android:id="@+id/login_screen_to_main_screen_action"
+            app:destination="@id/test_feature_graph"/>
+    </fragment>
 
 </navigation>

@@ -1,5 +1,6 @@
 package com.gucodero.ui.components
 
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -13,7 +14,8 @@ fun AppButton(
 ){
     Button(
         onClick = onClick,
-        modifier = Modifier.then(modifier)
+        modifier = Modifier.then(modifier),
+        shape = CircleShape
     ) {
         Text(text = text)
     }
