@@ -1,6 +1,6 @@
 package com.gucodero.domain.shared.base
 
-interface SimpleUseCase {
+sealed interface SimpleUseCase {
 
     interface ParamsAndResult<Parameters, Result>: SimpleUseCase {
         suspend operator fun invoke(params: Parameters): Result

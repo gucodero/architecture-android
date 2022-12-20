@@ -11,15 +11,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gucodero.auth.module.loadModules
-import com.gucodero.ui.base.ScreenFragment
-import com.gucodero.ui.components.AppButton
-import com.gucodero.ui.utils.navigate
+import com.gucodero.ui.common.component.AppButton
+import com.gucodero.ui.common.util.navigate
+import com.gucodero.ui.compose.fragment.ScreenFragment
+import com.gucodero.ui.compose.util.OnEvent
 
 class LoginScreen: ScreenFragment<LoginViewModel>(
     clazz = LoginViewModel::class
 ) {
 
-    override fun onInit() {
+    init {
         loadModules()
     }
 
@@ -42,7 +43,7 @@ class LoginScreen: ScreenFragment<LoginViewModel>(
                 .fillMaxSize()
         ) {
             TextField(
-                value = state.username,
+                value = uiState.username,
                 onValueChange = {
                     setUsername(it)
                 },
@@ -53,7 +54,7 @@ class LoginScreen: ScreenFragment<LoginViewModel>(
                     .padding(bottom = 25.dp)
             )
             TextField(
-                value = state.password,
+                value = uiState.password,
                 onValueChange = {
                     setPassword(it)
                 },

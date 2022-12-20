@@ -5,8 +5,8 @@ plugins {
 }
 
 object Versions {
-    const val gradlePlugin = "7.1.2"
-    const val kotlin = "1.6.10"
+    const val gradlePlugin = "7.3.0"
+    const val kotlin = "1.7.10"
 }
 
 object Plugins {

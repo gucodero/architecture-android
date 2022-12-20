@@ -1,26 +1,30 @@
 package com.gucodero.auth.ui.login
 
-import com.gucodero.auth.ui.login.ui_state.LoginUiState
-import com.gucodero.ui.lifecycle.StatefulViewModel
+import com.gucodero.ui.common.lifecycle.StatefulViewModel
+import com.gucodero.ui.common.util.setUiState
 
-class LoginViewModel: StatefulViewModel<LoginUiState, LoginUiEvent>(
+class LoginViewModel(): StatefulViewModel<LoginUiState, LoginUiEvent>(
     state = LoginUiState()
 ) {
 
     fun setUsername(username: String){
-        state = state.copy(
-            username = username
-        )
+        setUiState {
+            copy(
+                username = username
+            )
+        }
     }
 
     fun setPassword(password: String){
-        state = state.copy(
-            password = password
-        )
+        setUiState {
+            copy(
+                password = password
+            )
+        }
     }
 
     fun login(){
-        event = LoginUiEvent.GoToMain
+        LoginUiEvent.GoToMain.send()
     }
 
 }

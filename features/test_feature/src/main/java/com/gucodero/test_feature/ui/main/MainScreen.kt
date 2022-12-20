@@ -5,18 +5,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.lifecycleScope
 import com.gucodero.architectureandroid.test.TestBottomSheetDialog
 import com.gucodero.architectureandroid.test.TestDialog
 import com.gucodero.test_feature.module.loadModules
-import com.gucodero.ui.base.ScreenFragment
-import com.gucodero.ui.components.AppButton
-import com.gucodero.ui.utils.navigate
+import com.gucodero.ui.common.component.AppButton
+import com.gucodero.ui.common.util.navigate
+import com.gucodero.ui.compose.fragment.ScreenFragment
+import com.gucodero.ui.compose.util.OnEvent
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainScreen: ScreenFragment<MainViewModel>(
     clazz = MainViewModel::class
 ) {
 
-    override fun onInit() {
+    init {
         loadModules()
     }
 
@@ -51,7 +55,11 @@ class MainScreen: ScreenFragment<MainViewModel>(
             AppButton(
                 text = "Loading",
                 onClick = {
-                    loading(true, 2000)
+                    lifecycleScope.launch {
+                        loading = true
+                        delay(2000)
+                        loading = false
+                    }
                 }
             )
             Spacer(modifier = Modifier.height(12.dp))

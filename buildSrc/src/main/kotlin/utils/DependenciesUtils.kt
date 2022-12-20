@@ -75,9 +75,15 @@ fun Project.addFeatureDependencies(){
 fun Project.addAndroidDependencies() {
     implementation(
         Dependencies.androidCore,
+        Dependencies.fragment,
+        Dependencies.activity,
         Dependencies.activityCompose,
-        Dependencies.lifecycleRuntime
+        Dependencies.lifecycleRuntime,
+        Dependencies.viewModel,
+        Dependencies.liveData,
+        Dependencies.viewModelSavedState
     )
+    kapt(Dependencies.lifecycleCompiler)
 }
 
 fun Project.addComposeDependencies() {
@@ -85,7 +91,8 @@ fun Project.addComposeDependencies() {
         Dependencies.compose,
         Dependencies.composeMaterial,
         Dependencies.composePreview,
-        Dependencies.pagerCompose
+        Dependencies.pagerCompose,
+        Dependencies.liveDataCompose
     )
 }
 

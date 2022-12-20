@@ -8,8 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.gucodero.ui.base.ScreenFragment
-import com.gucodero.ui.components.AppButton
+import com.gucodero.ui.common.component.AppButton
+import com.gucodero.ui.compose.fragment.ScreenFragment
 
 class CounterScreen: ScreenFragment<CounterViewModel>(
     clazz = CounterViewModel::class
@@ -24,7 +24,7 @@ class CounterScreen: ScreenFragment<CounterViewModel>(
                 .fillMaxSize()
         ) {
             Text(
-                text = "${state.counter}",
+                text = "${uiState.counter}",
                 fontSize = 80.sp,
                 textAlign = TextAlign.Center,
                 modifier = Modifier

@@ -1,7 +1,7 @@
 package com.gucodero.architectureandroid
 
 import android.os.Bundle
-import com.gucodero.ui.base.BaseActivity
+import com.gucodero.ui.common.activity.BaseActivity
 
 class MainActivity: BaseActivity() {
 

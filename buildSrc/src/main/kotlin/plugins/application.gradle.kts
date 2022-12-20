@@ -1,6 +1,5 @@
 package plugins
 
-import gradle.kotlin.dsl.accessors._ebd9a44e97e230845a4c1d2edcc3667f.api
 import utils.addFeatureDependencies
 
 plugins {
@@ -14,6 +13,7 @@ android {
     defaultConfig {
         minSdk = Config.minSdk
         targetSdk = Config.maxSdk
+        multiDexEnabled = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.compose
@@ -29,4 +29,5 @@ addFeatureDependencies()
 dependencies {
     implementation(project(":ui"))
     api(project(path = ":data"))
+    implementation("androidx.multidex:multidex:2.0.1")
 }

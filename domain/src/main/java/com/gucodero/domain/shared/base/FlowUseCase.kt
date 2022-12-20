@@ -2,7 +2,7 @@ package com.gucodero.domain.shared.base
 
 import kotlinx.coroutines.flow.Flow
 
-interface FlowUseCase {
+sealed interface FlowUseCase {
 
     interface ParamsAndResult<Parameters, Result>: FlowUseCase {
         suspend operator fun invoke(params: Parameters): Flow<Result>

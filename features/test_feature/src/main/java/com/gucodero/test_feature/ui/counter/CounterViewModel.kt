@@ -3,9 +3,9 @@ package com.gucodero.test_feature.ui.counter
 import com.gucodero.domain.counter.use_cases.get_counter.GetCounterUseCase
 import com.gucodero.domain.counter.use_cases.set_counter.SetCounterParameters
 import com.gucodero.domain.counter.use_cases.set_counter.SetCounterUseCase
-import com.gucodero.test_feature.ui.counter.ui_state.CounterUiState
-import com.gucodero.ui.lifecycle.StatefulViewModel
-import com.gucodero.ui.utils.launch
+import com.gucodero.ui.common.lifecycle.StatefulViewModel
+import com.gucodero.ui.common.util.launch
+import com.gucodero.ui.common.util.setUiState
 
 class CounterViewModel(
     private val getCounterUseCase: GetCounterUseCase,
@@ -28,9 +28,11 @@ class CounterViewModel(
 
     private fun getCounter() = launch {
         getCounterUseCase().collect {
-            state = state.copy(
-                counter = it.counter
-            )
+            setUiState {
+                copy(
+                    counter = it.counter
+                )
+            }
         }
     }
 

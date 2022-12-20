@@ -7,7 +7,6 @@ buildscript {
         classpath(Plugins.gradle)
         classpath(Plugins.kotlin)
         classpath(Plugins.safeArgs)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30")
     }
 }
 

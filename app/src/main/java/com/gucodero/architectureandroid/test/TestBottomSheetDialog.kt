@@ -8,8 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.gucodero.ui.base.ScreenBottomSheetDialog
-import com.gucodero.ui.base.ScreenDialog
+import com.gucodero.ui.compose.fragment.ScreenBottomSheetDialog
 
 class TestBottomSheetDialog: ScreenBottomSheetDialog() {
 

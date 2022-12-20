@@ -20,6 +20,7 @@ extension<BaseExtension>("android") {
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
     }
 
     //create env
